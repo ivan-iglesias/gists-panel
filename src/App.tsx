@@ -41,12 +41,12 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="cards">
         {gists && gists.length > 0 && gists.map((gist) => (
-          <div key={gist.id} className="card">
+          <a href={gist.html_url} key={gist.id} className="card" target="_blank">
             <p>{ gist.description || 'NA' }</p>
             <div className="card__created_at">{gist.created_at}</div>
-          </div>
+          </a>
         ))}
        </div>
     </>

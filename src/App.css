@@ -3,12 +3,18 @@
   text-align: center;
 }
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
 .card {
   padding: 1em;
-  margin-bottom: .5rem;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 16px;
   text-align: start;
+  text-decoration: none;
 
   p {
     margin: 0 0 .5rem 0;
