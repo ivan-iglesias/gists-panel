@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import Header from './Header';
 
 const GISTS_ENDPOINT = 'https://api.github.com/users';
 
@@ -41,14 +42,18 @@ function App() {
 
   return (
     <>
-      <div className="cards">
-        {gists && gists.length > 0 && gists.map((gist) => (
-          <a href={gist.html_url} key={gist.id} className="card" target="_blank">
-            <p>{ gist.description || 'NA' }</p>
-            <div className="card__created_at">{gist.created_at}</div>
-          </a>
-        ))}
-       </div>
+      <div className="app">
+        <Header />
+        
+        <div className="cards">
+          {gists && gists.length > 0 && gists.map((gist) => (
+            <a href={gist.html_url} key={gist.id} className="card" target="_blank">
+              <p>{ gist.description || 'NA' }</p>
+              <div className="card__created_at">{gist.created_at}</div>
+            </a>
+          ))}
+        </div>
+      </div>
     </>
   )
 }

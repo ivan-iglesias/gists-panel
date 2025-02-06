@@ -3,32 +3,35 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: light;
+  --dark: #213547;
+  --ligth: #fdfdfd;
 }
 
-/*
+:root.dark {
+  color-scheme: dark;
+  --dark: #fdfdfd;
+  --ligth: #213547;
+}
+
+body {
+  background-color: var(--ligth);
+  color: var(--dark);
+  transition: all .5s;
+  margin: 0;
+}
+
 a {
-  font-weight: 500;
-  color: #646cff;
+  color: var(--text-primary);
   text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
-}
-*/
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -46,6 +49,8 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  background-color: var(--background-color);
+  color: var(--text-primary);
 }
 button:hover {
   border-color: #646cff;
@@ -53,17 +58,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
